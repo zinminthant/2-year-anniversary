@@ -1,0 +1,765 @@
+<html>
+  <head>
+  <title>2-year anniversary</title>
+</head>
+    <style>
+
+.grid {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(auto-fill, minmax(20%,1fr));
+  grid-auto-rows: 20px;
+}
+
+
+/* Non-grid specific CSS */  
+body {
+  margin: 10px;
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-size: 1.15em;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+  letter-spacing: 2px;
+}
+
+.item {
+  background-color: #ffffff;    
+}
+
+.photothumb{
+  width: 100%;
+}
+
+.title {
+  padding: 20px;
+ }
+
+.title h3{
+  font-size: 1.2em;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+.project .title{
+  background-color: #607D8B;
+}
+
+.blog .title{
+  background-color: #ff9800;
+}
+
+.photo .title{
+  background-color: #f44336;
+}
+
+.desc{
+  padding: 10px 10px 5px 10px;
+}
+
+.desc img{
+  width: 50%;
+  margin: 0 10px 10px 0;
+  float: left;
+}
+
+.desc p{
+  margin-bottom: 10px;
+}
+
+
+
+        body {
+  font-size: 13px;
+}
+
+a {
+  cursor: pointer;
+}
+
+.middle-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 95vh;
+}
+
+.like-wrapper {
+  display: flex;
+  justify-content: space-around;
+  flex-flow: row wrap;
+  width: 50%;
+}
+.p{
+  color:#0000;
+  
+}
+
+.like-button {
+  border: 2px solid #c7c7c7;
+  border-radius: 40px;
+  padding: 0.45rem 0.75rem;
+  color: #878787;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  filter: grayscale(100%);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.like-button.liked {
+  color: #ff6e6f;
+  border-color: currentColor;
+  filter: grayscale(0);
+}
+.like-button:hover {
+  border-color: currentColor;
+}
+
+
+.hidden {
+    display: none;
+  }
+
+.like-icon {
+  width: 18px;
+  height: 16px;
+  display: inline-block;
+  position: relative;
+  margin-right: 0.25em;
+  font-size: 1.5rem;
+  background: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjEiIGhlaWdodD0iMTgiIHZpZXdCb3g9IjAgMCAyMSAxOCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMTAuMTAxIDQuNDE3UzguODk1LjIwNyA1LjExMS4yMDdjLTQuNDY1IDAtMTAuOTY3IDYuODQ2IDUuMDgyIDE3LjU5MkMyNS4yMzcgNy4wMyAxOS42NjUuMjAyIDE1LjUwMS4yMDJjLTQuMTYyIDAtNS40IDQuMjE1LTUuNCA0LjIxNXoiIGZpbGw9IiNGRjZFNkYiIGZpbGwtcnVsZT0iZXZlbm9kZCIvPjwvc3ZnPg==") no-repeat center;
+  background-size: 100%;
+  -webkit-animation: heartUnlike 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+          animation: heartUnlike 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+}
+
+.liked .like-icon {
+  -webkit-animation: heartPulse 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+          animation: heartPulse 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+}
+.liked .like-icon [class^=heart-animation-] {
+  background: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjEiIGhlaWdodD0iMTgiIHZpZXdCb3g9IjAgMCAyMSAxOCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMTAuMTAxIDQuNDE3UzguODk1LjIwNyA1LjExMS4yMDdjLTQuNDY1IDAtMTAuOTY3IDYuODQ2IDUuMDgyIDE3LjU5MkMyNS4yMzcgNy4wMyAxOS42NjUuMjAyIDE1LjUwMS4yMDJjLTQuMTYyIDAtNS40IDQuMjE1LTUuNCA0LjIxNXoiIGZpbGw9IiNGRjZFNkYiIGZpbGwtcnVsZT0iZXZlbm9kZCIvPjwvc3ZnPg==") no-repeat center;
+  background-size: 100%;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 16px;
+  height: 14px;
+  opacity: 0;
+}
+.liked .like-icon [class^=heart-animation-]::before, .liked .like-icon [class^=heart-animation-]::after {
+  content: "";
+  background: inherit;
+  background-size: 100%;
+  width: inherit;
+  height: inherit;
+  display: inherit;
+  position: relative;
+  top: inherit;
+  left: inherit;
+  opacity: 0;
+}
+.liked .like-icon .heart-animation-1 {
+  -webkit-animation: heartFloatMain-1 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+          animation: heartFloatMain-1 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+}
+.liked .like-icon .heart-animation-1::before, .liked .like-icon .heart-animation-1::after {
+  width: 12px;
+  height: 10px;
+  visibility: hidden;
+}
+.liked .like-icon .heart-animation-1::before {
+  opacity: 0.6;
+  -webkit-animation: heartFloatSub-1 1s 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+          animation: heartFloatSub-1 1s 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+}
+.liked .like-icon .heart-animation-1::after {
+  -webkit-animation: heartFloatSub-2 1s 0.15s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+          animation: heartFloatSub-2 1s 0.15s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+  opacity: 0.75;
+}
+.liked .like-icon .heart-animation-2 {
+  -webkit-animation: heartFloatMain-2 1s 0.1s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+          animation: heartFloatMain-2 1s 0.1s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+}
+.liked .like-icon .heart-animation-2::before, .liked .like-icon .heart-animation-2::after {
+  width: 10px;
+  height: 8px;
+  visibility: hidden;
+}
+.liked .like-icon .heart-animation-2::before {
+  -webkit-animation: heartFloatSub-3 1s 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+          animation: heartFloatSub-3 1s 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+  opacity: 0.25;
+}
+.liked .like-icon .heart-animation-2::after {
+  -webkit-animation: heartFloatSub-4 1s 0.15s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+          animation: heartFloatSub-4 1s 0.15s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+  opacity: 0.4;
+}
+
+@-webkit-keyframes heartPulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+}
+
+@keyframes heartPulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+}
+@-webkit-keyframes heartUnlike {
+  50% {
+    transform: scale(0.75);
+  }
+}
+@keyframes heartUnlike {
+  50% {
+    transform: scale(0.75);
+  }
+}
+@-webkit-keyframes heartFloatMain-1 {
+  0% {
+    opacity: 0;
+    transform: translate(0) rotate(0);
+  }
+  50% {
+    opacity: 1;
+    transform: translate(0, -25px) rotate(-20deg);
+  }
+}
+@keyframes heartFloatMain-1 {
+  0% {
+    opacity: 0;
+    transform: translate(0) rotate(0);
+  }
+  50% {
+    opacity: 1;
+    transform: translate(0, -25px) rotate(-20deg);
+  }
+}
+@-webkit-keyframes heartFloatMain-2 {
+  0% {
+    opacity: 0;
+    transform: translate(0) rotate(0) scale(0);
+  }
+  50% {
+    opacity: 0.9;
+    transform: translate(-10px, -38px) rotate(25deg) scale(1);
+  }
+}
+@keyframes heartFloatMain-2 {
+  0% {
+    opacity: 0;
+    transform: translate(0) rotate(0) scale(0);
+  }
+  50% {
+    opacity: 0.9;
+    transform: translate(-10px, -38px) rotate(25deg) scale(1);
+  }
+}
+@-webkit-keyframes heartFloatSub-1 {
+  0% {
+    visibility: hidden;
+    transform: translate(0) rotate(0);
+  }
+  50% {
+    visibility: visible;
+    transform: translate(13px, -13px) rotate(30deg);
+  }
+}
+@keyframes heartFloatSub-1 {
+  0% {
+    visibility: hidden;
+    transform: translate(0) rotate(0);
+  }
+  50% {
+    visibility: visible;
+    transform: translate(13px, -13px) rotate(30deg);
+  }
+}
+@-webkit-keyframes heartFloatSub-2 {
+  0% {
+    visibility: hidden;
+    transform: translate(0) rotate(0);
+  }
+  50% {
+    visibility: visible;
+    transform: translate(18px, -10px) rotate(55deg);
+  }
+}
+@keyframes heartFloatSub-2 {
+  0% {
+    visibility: hidden;
+    transform: translate(0) rotate(0);
+  }
+  50% {
+    visibility: visible;
+    transform: translate(18px, -10px) rotate(55deg);
+  }
+}
+@-webkit-keyframes heartFloatSub-3 {
+  0% {
+    visibility: hidden;
+    transform: translate(0) rotate(0);
+  }
+  50% {
+    visibility: visible;
+    transform: translate(-10px, -10px) rotate(-40deg);
+  }
+  100% {
+    transform: translate(-50px, 0);
+  }
+}
+@keyframes heartFloatSub-3 {
+  0% {
+    visibility: hidden;
+    transform: translate(0) rotate(0);
+  }
+  50% {
+    visibility: visible;
+    transform: translate(-10px, -10px) rotate(-40deg);
+  }
+  100% {
+    transform: translate(-50px, 0);
+  }
+}
+@-webkit-keyframes heartFloatSub-4 {
+  0% {
+    visibility: hidden;
+    transform: translate(0) rotate(0);
+  }
+  50% {
+    visibility: visible;
+    transform: translate(2px, -18px) rotate(-25deg);
+  }
+}
+@keyframes heartFloatSub-4 {
+  0% {
+    visibility: hidden;
+    transform: translate(0) rotate(0);
+  }
+  50% {
+    visibility: visible;
+    transform: translate(2px, -18px) rotate(-25deg);
+  }
+}
+    </style>
+    <div class='middle-wrapper' id="first">
+        <div class='like-wrapper'>
+         
+          <a class='like-button'>
+            <span class='like-icon'>
+              <div class='heart-animation-1'></div>
+              <div class='heart-animation-2'></div>
+            </span>
+            "2-year anniversary"
+          </a>
+         
+        </div>
+      </div>
+      <div class="hidden" id="second">
+        <div class="grid" >
+        <div class="item project">
+          <div class="content">
+            <div class="title">
+            </div>
+            <img class="photothumb" src="1.jpeg">
+            <div class="desc">
+              <p style="color:black">"we were drinking together and reminiscing at <b>the corner community bar</b>"</p>
+            </div>
+          </div>
+        </div>
+        <div class="item project">
+          <div class="content">
+            <div class="title">
+            
+            </div>
+            <div class="desc">
+              <img src="2.jpeg">
+              <p>"it was our <b>very first time uploading a couple photo</b> to macebook myday"</p>
+            </div>
+          </div>
+        </div>
+        <div class="item photo">
+          <div class="content">
+            <div class="title">
+             
+            </div>
+            <img class="photothumb" src="6.jpeg">
+            <div class="desc">
+              <p>"it was my very first time experiencing riding a <b>tricycle together</b>"</p>
+            </div>
+          </div>
+        </div>
+        <div class="item photo">
+          <div class="content">
+            <div class="title">
+            
+            </div>
+            <img class="photothumb" src="5.jpeg">
+            <div class="desc">
+              <p>"we had good times sitting together in front of the <b>Junction Square</b>"</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="item project">
+          <div class="content">
+            <div class="title">
+            
+            </div>
+            <div class="desc">
+              <img src="3.jpeg">
+              <p>"we've got <b>high</b> together"</p>
+              <br><br> <br><br> <br><br>
+            </div>
+          </div>
+        </div>
+
+        <div class="item blog">
+          <div class="content">
+            <div class="title">
+            <h3>2-year anniversary</h3>
+            </div>
+            <div class="desc">
+            <p>
+              "It's already been 2 years, and today marks our <b>2-year anniversary</b>.
+               We've made countless memories together, eating, going out, and having fun. 
+               We've shared <b>everything together</b>, and we've also endured long-distance relationship.
+                We've had our fair share of fights, but they only made our love stronger. 
+                <b> We're still counting the days and plan to celebrate our anniversary for the rest of our lives.</b><br>
+               <b>Happy 2-year anniversary❤️!</b>"
+            </p>
+            </div>
+          </div>
+        </div>
+        <div class="item project">
+          <div class="content">
+            <div class="title">
+            
+            </div>
+            <div class="desc">
+              <img src="4.jpeg">
+              <p>"we had fun at the <b>777</b>"</p>
+              <br><br><br><br><br><br>
+            </div>
+          </div>
+        </div>
+        <div class="item project">
+          <div class="content">
+            <div class="title">
+           
+            </div>
+            <div class="desc">
+              <img src="14.jpeg">
+              <p>"we were at <b>the Crush Bar</b> late at night"</p>
+              <br><br><br><br><br><br><br><br>
+            </div>
+          </div>
+        </div>
+       
+       
+        <div class="item photo">
+          <div class="content">
+            <div class="title">
+        
+            </div>
+            <img class="photothumb" src="7.jpeg">
+            <div class="desc">
+              <p>"<b>birthday of mine</b>"</p>
+            </div>
+          </div>
+        </div>
+       
+        <div class="item photo">
+          <div class="content">
+            <div class="title">
+          
+            </div>
+            <img class="photothumb" src="8.jpeg">
+            <div class="desc">
+              <p>"<b>birthday of yours</b>"</p>
+            </div>
+          </div>
+        </div>
+        <div class="item project">
+          <div class="content">
+            <div class="title">
+             
+            </div>
+            <div class="desc">
+              <img src="9.jpeg">
+              <p>"we were eating <b>Maha Curry</b> together at Nan Cherry restaurant on <b>19th Street</b>"</p>
+              <br><br><br> <br><br><br>
+            </div>
+          </div>
+        </div>
+        <div class="item photo">
+          <div class="content">
+            <div class="title">
+            
+            </div>
+            <img class="photothumb" src="12.jpeg">
+            <div class="desc">
+              <p>"first time trying <b>korean cold noodles</b> together"</p>
+            </div>
+          </div>
+        </div>
+        <div class="item project">
+          <div class="content">
+            <div class="title">
+            
+            </div>
+            <div class="desc">
+              <img src="13.jpeg">
+              <p>"we had fun together on <b>20th Street</b>"</p><br><br><br> <br><br><br> <br><br><br>
+            </div>
+          </div>
+        </div>
+        <div class="item project">
+          <div class="content">
+            <div class="title">
+             
+            </div>
+            <div class="desc">
+              <img src="15.jpeg">
+              <p>"it was <b>the very first couple photo on your instagram</b>"<br><br><br> <br><br><br> <br><br><br></p>
+            </div>
+          </div>
+        </div>
+    
+        <div class="item project">
+          <div class="content">
+            <div class="title">
+            
+            </div>
+            <div class="desc">
+              <img src="16.jpeg">
+              <p>"<b>Lotteria eaters</b>"</p><br><br><br> <br><br><br> <br><br><br>
+            </div>
+          </div>
+        </div>
+    
+        <div class="item photo">
+          <div class="content">
+            <div class="title" style="background-color: #ff9800;">
+            
+            </div>
+            <img class="photothumb" src="17.jpeg">
+            <div class="desc">
+              <p>"shopping together at the <b>Gamone Pwint</b>"</p>
+            </div>
+          </div>
+        </div>
+        <div class="item photo">
+          <div class="content">
+            <div class="title">
+             
+            </div>
+            <img class="photothumb" src="18.jpeg">
+            <div class="desc">
+              <p>"we went to <b>Jo Jo</b> together"</p>
+            </div>
+          </div>
+        </div>
+
+
+        
+
+
+        <div class="item photo">
+          <div class="content">
+            <div class="title">
+        
+            </div>
+            <img class="photothumb" src="21.jpeg">
+            <div class="desc">
+              <p>"listening street <b>unplugged</b> together"</p>
+            </div>
+          </div>
+        </div>
+       
+        <div class="item photo">
+          <div class="content">
+            <div class="title">
+          
+            </div>
+            <img class="photothumb" src="22.jpeg">
+            <div class="desc">
+              <p>"<b>BBQ Hub</b> with you"</p>
+            </div>
+          </div>
+        </div>
+        <div class="item photo">
+          <div class="content">
+            <div class="title">
+            
+            </div>
+            <img class="photothumb" src="23.jpeg">
+            <div class="desc">
+              <p>"<b>Hotpot King</b>"</p>
+            </div>
+          </div>
+        </div>
+        <div class="item project">
+          <div class="content">
+            <div class="title">
+            
+            </div>
+            <div class="desc">
+              <img src="24.jpeg">
+              <p>"we had eaten together at <b>Sweet Thai</b>"</p>
+              <br><br><br><br><br><br><br><br>
+            </div>
+          </div>
+        </div>
+        <div class="item project">
+          <div class="content">
+            <div class="title">
+             
+            </div>
+            <div class="desc">
+              <img src="27.jpeg">
+              <p>"<b>number one!</b>"</p>
+              <br><br><br><br><br><br><br><br><br><br><br>
+            </div>
+          </div>
+        </div>
+    
+        <div class="item photo">
+          <div class="content">
+            <div class="title">
+            
+            </div>
+            <img class="photothumb" src="28.jpeg">
+            <div class="desc">
+              <p>"prayed together at the <b>Shwedagon Pagoda</b>"</p>
+            </div>
+          </div>
+        </div>
+        <div class="item project">
+          <div class="content">
+            <div class="title">
+            
+            </div>
+            <div class="desc">
+              <img src="26.jpeg">
+              <p>"<b>mala mao cai</b> with you"</p><br><br><br> <br><br><br> <br><br><br>
+            </div>
+          </div>
+        </div>
+    
+        <div class="item photo">
+          <div class="content">
+            <div class="title" style="background-color: #ff9800;">
+            
+            </div>
+            <img class="photothumb" src="25.jpeg">
+            <div class="desc">
+              <p>"<b>Bamboo</b> with you"</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="item photo">
+          <div class="content">
+            <div class="title">
+        
+            </div>
+            <img class="photothumb" src="99.jpeg">
+            <div class="desc">
+              <p>"before we separated and faced <b>LDRs</b>"</p>
+            </div>
+          </div>
+        </div>
+       
+       
+
+
+        </div>
+
+      </div>
+      <!-- <div class="grid" >
+       
+        
+        
+       
+        
+
+        
+       
+       
+        
+       
+       
+        
+      </div> -->
+ 
+
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+      <script>
+        $('a.like-button').on('click', function(e) {
+            $(this).toggleClass('liked');
+            
+            setTimeout(() => {
+              $(e.target).removeClass('liked')
+            }, 1000)
+            setTimeout(() => {
+              var first = document.getElementById("first");
+              var second = document.getElementById("second");
+
+              first.style.display = "none";
+            second.classList.remove("hidden");
+            
+window.onload = resizeAllGridItems();
+window.addEventListener("resize", resizeAllGridItems);
+
+allItems = document.getElementsByClassName("item");
+for(x=0;x<allItems.length;x++){
+  imagesLoaded( allItems[x], resizeInstance);
+}
+              // first.style.display = "none";
+             // second.style.display = "block";
+            }, 1002)
+          
+
+          });
+
+          function resizeGridItem(item){
+  grid = document.getElementsByClassName("grid")[0];
+  rowHeight = parseInt(window.getComputedStyle(grid).getPropertyValue('grid-auto-rows'));
+  rowGap = parseInt(window.getComputedStyle(grid).getPropertyValue('grid-row-gap'));
+  rowSpan = Math.ceil((item.querySelector('.content').getBoundingClientRect().height+rowGap)/(rowHeight+rowGap));
+    item.style.gridRowEnd = "span "+rowSpan;
+}
+
+function resizeAllGridItems(){
+  allItems = document.getElementsByClassName("item");
+  for(x=0;x<allItems.length;x++){
+    resizeGridItem(allItems[x]);
+  }
+}
+
+function resizeInstance(instance){
+	item = instance.elements[0];
+  resizeGridItem(item);
+}
+
+      </script>
+</html>
